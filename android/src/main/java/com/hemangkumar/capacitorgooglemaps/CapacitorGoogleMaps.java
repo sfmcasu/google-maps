@@ -227,6 +227,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
                 }
 
                 Marker marker = googleMap.addMarker(markerOptions);
+                marker.setRotation(rotation);
 
                 // set metadata to marker
                 marker.setTag(metadata);

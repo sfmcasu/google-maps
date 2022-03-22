@@ -198,8 +198,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
         final JSObject metadata = call.getObject("metadata");
         final String url = call.getString("iconUrl", "");
         final Boolean draggable = call.getBoolean("draggable", false);
-
-        final Float rotation = call.getFloat("rotation", "");
+        final Float rotation = call.getFloat("rotation", 0f);
 
         if (googleMap == null){
             call.reject("Map is not ready");
@@ -219,9 +218,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
                 markerOptions.snippet(snippet);
                 markerOptions.flat(isFlat);
                 markerOptions.draggable(draggable);
-
-                markerOptions.rotation(rotation.floatValue());
-                System.out.println("## rotation:" + rotation.floatValue());
+                markerOptions.rotation(rotation);
 
                 if (imageBitmap != null) {
                     markerOptions.icon(BitmapDescriptorFactory.fromBitmap(imageBitmap));

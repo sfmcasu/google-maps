@@ -210,7 +210,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
 
         //file:///android_asset/www/
         //Bitmap bitmap = BitmapFactory.decodeStream("file:///android_asset/www/" +);
-        String initialString = "./android_asset/www/assets/step-start.png";
+        String initialString = "file:///android_asset/www/assets/step-start.png";
         InputStream targetStream = new ByteArrayInputStream(initialString.getBytes());
         Bitmap bitmap = BitmapFactory.decodeStream(targetStream);
         Bitmap imageBitmap = Bitmap.createScaledBitmap(bitmap, getScaledPixels(bitmap.getWidth()), this.getScaledPixels(bitmap.getHeight()), true);

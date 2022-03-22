@@ -220,14 +220,13 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
                 markerOptions.flat(isFlat);
                 markerOptions.draggable(draggable);
 
-                markerOptions.rotation(120.f);
+                markerOptions.rotation(rotation.floatValue());
 
                 if (imageBitmap != null) {
                     markerOptions.icon(BitmapDescriptorFactory.fromBitmap(imageBitmap));
                 }
 
                 Marker marker = googleMap.addMarker(markerOptions);
-                //marker.setRotation(rotation);
 
                 // set metadata to marker
                 marker.setTag(metadata);

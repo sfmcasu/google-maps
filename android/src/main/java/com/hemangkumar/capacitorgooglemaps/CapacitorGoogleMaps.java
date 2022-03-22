@@ -47,6 +47,7 @@ import com.google.android.libraries.maps.model.PolylineOptions;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -205,7 +206,15 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
             return;
         }
 
-        Bitmap imageBitmap = getBitmapFromURL(url);
+        //Bitmap imageBitmap = getBitmapFromURL(url);
+
+        //file:///android_asset/www/
+        //Bitmap bitmap = BitmapFactory.decodeStream("file:///android_asset/www/" +);
+        String initialString = "./android_asset/www/assets/step-start.png";
+        InputStream targetStream = new ByteArrayInputStream(initialString.getBytes());
+        Bitmap bitmap = BitmapFactory.decodeStream(targetStream);
+        Bitmap imageBitmap = Bitmap.createScaledBitmap(bitmap, getScaledPixels(bitmap.getWidth()), this.getScaledPixels(bitmap.getHeight()), true);
+        //Bitmap imageBitmap = getBitmapFromURL(url);
 
         getBridge().getActivity().runOnUiThread(new Runnable() {
             @Override

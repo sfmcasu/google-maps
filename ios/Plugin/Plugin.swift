@@ -90,7 +90,7 @@ public class CapacitorGoogleMaps: CAPPlugin, GMSMapViewDelegate, GMSPanoramaView
                 marker.isFlat = isFlat
                 marker.opacity = opacity
                 marker.isDraggable = draggable
-                marker.position = position
+                marker.rotation = rotation
 
                 if imageData != nil {
                     marker.icon = UIImage(data: imageData!)

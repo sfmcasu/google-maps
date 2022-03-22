@@ -67,7 +67,7 @@ public class CapacitorGoogleMaps: CAPPlugin, GMSMapViewDelegate, GMSPanoramaView
         let metadata = call.getObject("metadata") ?? [:]
         let url = URL(string: call.getString("iconUrl", ""))
         let draggable = call.getBool("draggable") ?? false
-        let rotation = call.getFloat("rotation") ?? 1
+        let rotation = call.getDouble("rotation") ?? 1
         var imageData: Data?
 
         if self.mapViewController == nil {

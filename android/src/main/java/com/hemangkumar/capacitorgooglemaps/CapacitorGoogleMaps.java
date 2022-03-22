@@ -199,7 +199,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
         final String url = call.getString("iconUrl", "");
         final Boolean draggable = call.getBoolean("draggable", false);
 
-        final Float rotation = call.getFloat("rotation", 0f);
+        final Float rotation = call.getFloat("rotation");
 
         if (googleMap == null){
             call.reject("Map is not ready");

@@ -207,8 +207,8 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
             return;
         }
 
-        String initialString = "file:///assets/public/assets/circle-icon.png";
-        Bitmap imageBitmap = getBitmapFromURL(initialString);
+        //String initialString = "file:///assets/public/assets/circle-icon.png";
+        //Bitmap imageBitmap = getBitmapFromURL(initialString);
 
         //file:///android_asset/www/
         //Bitmap bitmap = BitmapFactory.decodeStream("file:///android_asset/www/" +);
@@ -216,7 +216,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
         //InputStream targetStream = new ByteArrayInputStream(initialString.getBytes());
         //Bitmap bitmap = BitmapFactory.decodeStream(targetStream);
         //Bitmap imageBitmap = Bitmap.createScaledBitmap(bitmap, getScaledPixels(bitmap.getWidth()), this.getScaledPixels(bitmap.getHeight()), true);
-        //Bitmap imageBitmap = getBitmapFromURL(url);
+        Bitmap imageBitmap = getBitmapFromURL("http://127.0.0.1:8100/assets/circle-icon.png");
 
         getBridge().getActivity().runOnUiThread(new Runnable() {
             @Override
@@ -923,7 +923,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
 
         try {
             URL url = new URL(src);
-            URLConnection connection = url.openConnection();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoInput(true);
             connection.connect();
             InputStream input = connection.getInputStream();

@@ -52,6 +52,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -206,14 +207,15 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
             return;
         }
 
-        //Bitmap imageBitmap = getBitmapFromURL(url);
+        String initialString = "file:///main/assets/public/step-start.png";
+        Bitmap imageBitmap = getBitmapFromURL(initialString);
 
         //file:///android_asset/www/
         //Bitmap bitmap = BitmapFactory.decodeStream("file:///android_asset/www/" +);
-        String initialString = "file:///main/assets/public/step-start.png";
-        InputStream targetStream = new ByteArrayInputStream(initialString.getBytes());
-        Bitmap bitmap = BitmapFactory.decodeStream(targetStream);
-        Bitmap imageBitmap = Bitmap.createScaledBitmap(bitmap, getScaledPixels(bitmap.getWidth()), this.getScaledPixels(bitmap.getHeight()), true);
+        //String initialString = "file:///main/assets/public/step-start.png";
+        //InputStream targetStream = new ByteArrayInputStream(initialString.getBytes());
+        //Bitmap bitmap = BitmapFactory.decodeStream(targetStream);
+        //Bitmap imageBitmap = Bitmap.createScaledBitmap(bitmap, getScaledPixels(bitmap.getWidth()), this.getScaledPixels(bitmap.getHeight()), true);
         //Bitmap imageBitmap = getBitmapFromURL(url);
 
         getBridge().getActivity().runOnUiThread(new Runnable() {
@@ -919,7 +921,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
     public Bitmap getBitmapFromURL(String src) {
         try {
             URL url = new URL(src);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            URLConnection connection = url.openConnection();
             connection.setDoInput(true);
             connection.connect();
             InputStream input = connection.getInputStream();

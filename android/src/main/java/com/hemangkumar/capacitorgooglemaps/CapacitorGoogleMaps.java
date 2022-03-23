@@ -207,7 +207,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
             return;
         }
 
-        String initialString = "file:///main/assets/public/step-start.png";
+        String initialString = "file:///main/assets/step-start.png";
         Bitmap imageBitmap = getBitmapFromURL(initialString);
 
         //file:///android_asset/www/
@@ -928,6 +928,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
             Bitmap bitmap = BitmapFactory.decodeStream(input);
             return Bitmap.createScaledBitmap(bitmap, getScaledPixels(bitmap.getWidth()), this.getScaledPixels(bitmap.getHeight()), true);
         } catch (IOException e) {
+            System.out.println("[getBitmapFromURL] err" + e.getMessage());
             return null;
         }
     }

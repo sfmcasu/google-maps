@@ -207,7 +207,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
             return;
         }
 
-        String initialString = "file:///assets/circle-icon.png";
+        String initialString = "./assets/circle-icon.png";
         Bitmap imageBitmap = getBitmapFromURL(initialString);
 
         //file:///android_asset/www/

@@ -207,7 +207,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
             return;
         }
 
-        String initialString = "file:///main/assets/step-start.png";
+        String initialString = "file:///assets/circle-icon.png";
         Bitmap imageBitmap = getBitmapFromURL(initialString);
 
         //file:///android_asset/www/
@@ -919,6 +919,8 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
     }
 
     public Bitmap getBitmapFromURL(String src) {
+        System.out.println("[getBitmapFromURL] src:" + src);
+
         try {
             URL url = new URL(src);
             URLConnection connection = url.openConnection();

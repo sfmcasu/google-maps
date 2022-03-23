@@ -216,7 +216,7 @@ public class CapacitorGoogleMaps extends Plugin implements OnMapReadyCallback, G
         //InputStream targetStream = new ByteArrayInputStream(initialString.getBytes());
         //Bitmap bitmap = BitmapFactory.decodeStream(targetStream);
         //Bitmap imageBitmap = Bitmap.createScaledBitmap(bitmap, getScaledPixels(bitmap.getWidth()), this.getScaledPixels(bitmap.getHeight()), true);
-        Bitmap imageBitmap = getBitmapFromURL("http://:8100/assets/circle-icon.png");
+        Bitmap imageBitmap = getBitmapFromURL("http://assets/circle-icon.png");
 
         getBridge().getActivity().runOnUiThread(new Runnable() {
             @Override
